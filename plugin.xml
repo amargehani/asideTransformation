@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         point="org.eclipse.ui.popupMenus">
+      <objectContribution
+            adaptable="true"
+            id="com.framework.aside.popupMenu"
+            objectClass="org.eclipse.core.resources.IResource">
+             <menu
+               id="com.framework.aside.popupSubMenu"
+               label="Aside Transformation"
+               path="additions">
+            <groupMarker
+                  name="content">
+            </groupMarker>
+            <separator
+                  name="additions">
+            </separator>
+         </menu>
+         <action
+               class="com.framework.aside.actions.AddToTransformActionDelegate"
+               id="com.framework.aside.transform"
+               label="Add to Transform"
+               menubarPath="com.framework.aside.popupSubMenu/content"
+               tooltip="Add the selected resource(s) to the Favorites view">
+         </action>
+        
+      </objectContribution>
+   </extension>
+   <extension
+         point="org.eclipse.ui.commands">
+      <category
+            id="com.framework.aside.commands.category"
+            name="Aside">
+      </category>
+      <command
+            categoryId="com.framework.aside.commands.category"
+            id="com.framework.aside.command.openView"
+            name="Open Aside Transformation">
+      </command>
+   </extension>
+   <extension
+         point="org.eclipse.ui.handlers">
+      <handler
+            class="com.framework.aside.command.AsideTransformCommand"
+            commandId="com.framework.aside.command.openView">
+      </handler>
+   </extension>
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            locationURI="popup:org.eclipse.ui.popup.any?after=additions">
+         <menu
+               id="com.framework.aside.menu"
+               label="Aside Transformation"
+               mnemonic="A">
+            <command
+                  commandId="com.framework.aside.command.openView"
+                  id="com.framework.aside.menu.command"
+                  mnemonic="O">
+            </command>
+         </menu>
+      </menuContribution>
+   </extension>
+   
+   
+
+</plugin>
