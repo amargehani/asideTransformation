@@ -19,7 +19,7 @@ import com.framework.aside.bean.common.Constants;
 import com.framework.aside.bean.common.InterfaceConfigurationQueryProvider;
 
 /**
- * @author TCS
+ * @author Amar
  * @version 1.0
  */
 public class DynamicQueryJdbcCursorItemReader extends JdbcCursorItemReader

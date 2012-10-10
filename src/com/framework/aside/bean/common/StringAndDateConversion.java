@@ -22,7 +22,7 @@ import javax.xml.datatype.XMLGregorianCalendar;
 *
 * File Name        : StringAndDateConversion.java
 * Description      : Converts Date to String and String to Date.
-* @author          : TCS
+* @author          : Amar
 * Date             : 26/3/2012 07:20:00 PM
 * @version         : 1.0
 * 

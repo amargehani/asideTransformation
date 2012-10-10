@@ -17,7 +17,7 @@ import com.framework.aside.bean.common.StringAndDateConversion;
 /******************************************************************************
  * File Name   : CommonHeaderFooterFlatFileWriter.java 
  * Description : Uses the methods of Tasklet for preparing Header footer.
- * @author     : TCS 
+ * @author     : Amar 
  * Date        : 29/3/2012 08:26:00 PM
  * @version    : 1.0
  *****************************************************************************/

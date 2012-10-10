@@ -2,7 +2,7 @@
  *
  * File Name        : DynamicFormattingProcessor.java
  * Description      : Calls the method for formatting data acquired from the file.  
- * Author           : TCS
+ * Author           : Amar
  * Date             : 26/3/2012 07:00:00 PM
  * Version          : 1.0
  * 
@@ -17,7 +17,7 @@ import org.springframework.batch.core.ExitStatus;
 import org.springframework.batch.core.StepExecution;
 
 /**
- * @author TCS
+ * @author Amar
  * @version 1.0
  * 
  */

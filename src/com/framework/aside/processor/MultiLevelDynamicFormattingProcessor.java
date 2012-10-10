@@ -3,7 +3,7 @@
  * File Name : MultiLevelDynamicFormattingProcessor.java 
  * Description : Implements the abstract process method for formatting processing.
  * 
- * @author : TCS Date : 04/3/2012 07:00:00 PM
+ * @author : Amar Date : 04/3/2012 07:00:00 PM
  * @version : 1.0
  * 
  *****************************************************************************/
@@ -20,7 +20,7 @@ import com.framework.aside.bean.AttributesBean;
 
 
 /**
- * @author : TCS
+ * @author : Amar
  * @version : 1.0
  */
 public class MultiLevelDynamicFormattingProcessor extends AbstractFormattingProcessor

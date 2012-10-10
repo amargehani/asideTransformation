@@ -4,7 +4,7 @@ package com.framework.aside.bean.common;
 /******************************************************************************.
  * File Name        : ApparelSystemException.java
  * Description      : It logs the exception thrown with the message and data. 
- * @author          : TCS
+ * @author          : Amar
  * Date             : 25/6/2012 05:30:00 PM
  * @version         : 1.0
  *****************************************************************************/

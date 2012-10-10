@@ -25,7 +25,7 @@ import com.framework.aside.bean.common.TransformationException;
 *
 * File Name        : AbstractFormattingProcessor.java
 * Description      : Calls the method for formatting data acquired from the file.  
-* @author          : TCS
+* @author          : Amar
 * Date             : 19/04/2012 07:00:00 PM
 * @version         : 1.0
 * 

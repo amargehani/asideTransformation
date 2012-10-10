@@ -195,6 +195,7 @@ public class AsideTransformationWizard extends Wizard implements INewWizard {
 		// create baseconfiguration.xml
 
 		createBaseConfigurationXML(container);
+		createTransformationTemplate(container);
 
 		// Make sure the project is refreshed as the file was created outside
 		// the Eclipse API.
@@ -345,6 +346,61 @@ public class AsideTransformationWizard extends Wizard implements INewWizard {
 		}
 	}
 
+	/**
+	 * This file created the base structure of the file transformation configuiration file.
+	 * 
+	 * @param container
+	 * @throws IOException
+	 * @throws TemplateException
+	 */
+	private void createTransformationTemplate(IContainer container)
+			throws IOException, TemplateException {
+		
+		final Bundle bundle = Platform.getBundle(AsideActivator.PLUGIN_ID);
+		final String fileName = "resources/FileToFileTemplate.ftl";
+		final Path originPath = new Path(fileName);
+
+		URL bundledFileURL = FileLocator.find(bundle, originPath, null);
+
+		String ftlLocation = null;
+		try {
+			bundledFileURL = FileLocator.resolve(bundledFileURL);
+			ftlLocation = bundledFileURL.getFile().toString();
+			ftlLocation = ftlLocation
+					.substring(1, ftlLocation.lastIndexOf("/"));
+
+		} catch (IOException e) {
+			throw new RuntimeException("Plugin Error: can't read file: "
+					+ fileName, e);
+		}
+
+		Configuration cfg = new Configuration();
+		cfg.setDirectoryForTemplateLoading(new File(ftlLocation));
+		Template template = cfg.getTemplate("FileToFileTemplate.ftl");
+		final IFolder folder = container.getFolder(new Path("resources"));
+		if (folder.exists()) 
+		{			
+			// Build the data-model
+			Map<String, Object> data = new HashMap<String, Object>();
+			data.put("job_name", selectFileTransformationPage.getInterfaceMaster()
+					.getInterfaceName());
+
+			// File output
+			Writer baseFile = new FileWriter(new File(folder.getLocation()
+					.toString() + "/" + "FileToFileTemplate.xml"));
+			template.process(data, baseFile);
+			baseFile.flush();
+			baseFile.close();
+		}
+	}
+
+	/**
+	 *  This method create blank file to insert the scripts.
+	 * @param scriptName
+	 * @param container
+	 * @return
+	 * @throws CoreException
+	 */
 	private OutputStream createInsertScriptFile(String scriptName,
 			IContainer container) throws CoreException {
 		final IFile interfaceScript = container.getFile(new Path(scriptName));

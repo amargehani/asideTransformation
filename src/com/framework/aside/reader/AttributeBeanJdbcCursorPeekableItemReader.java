@@ -11,7 +11,7 @@ import com.framework.aside.bean.common.TransformationSystemException;
 *
 * File Name        : AggregateJdbcCursorPeekableAttributesBeanItemReader.java
 * Description      : Calls the method for getting attributes.  
-* @author          : TCS
+* @author          : Amar
 * Date             : 4/3/2012 07:41:00 PM
 * @version         : 1.0
 * 
